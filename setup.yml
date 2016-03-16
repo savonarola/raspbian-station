@@ -4,7 +4,7 @@
   hosts: all
   roles:
   - common
-  - synology
+  - net_shares
   - transmission
 
 - name: Setup user shell

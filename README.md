@@ -12,6 +12,8 @@ Put custom credentials into `passwords.yml` config:
     cp passwords.yml.sample passwords.yml
     vim passwords.yml
 
+Customize role variables.
+
 Run installation script:
 
     ./setup.sh

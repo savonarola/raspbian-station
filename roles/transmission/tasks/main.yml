@@ -1,0 +1,13 @@
+- name: "install transmission"
+  apt: name=transmission-daemon
+
+- name: "stop transmission to avoid config overwriting"
+  service: name=transmission-daemon state=stopped
+
+- name: "setup transmission config"
+  template: src=settings.j2 dest=/etc/transmission-daemon/settings.json owner=debian-transmission group=debian-transmission mode=0600
+
+- name: "start transmission"
+  service: name=transmission-daemon state=started
+
+

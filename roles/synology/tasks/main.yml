@@ -1,0 +1,15 @@
+- name: "create mount folders"
+  file: path=/mnt/{{item}} state=directory mode=0755
+  with_items: "{{volumes}}"
+
+- name: "mount net shares"
+  mount: name="/mnt/{{item}}"
+         src="//{{smb_host}}/{{item}}"
+         fstype=cifs
+         opts="username={{smb_username}},password={{smb_password}},uid={{ansible_user_id}},iocharset=utf8,file_mode=0777,dir_mode=0777"
+         state=mounted
+  with_items: "{{volumes}}"
+
+- name: "add mount folder shortcuts"
+  file: src=/mnt/{{item}} dest={{item}} state=link owner={{ansible_user_id}} group={{ansible_user_id}}
+  with_items: "{{volumes}}"

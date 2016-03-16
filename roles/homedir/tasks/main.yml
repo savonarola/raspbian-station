@@ -1,0 +1,6 @@
+- name: "clone homedir2"
+  git: repo=https://github.com/savonarola/homedir2.git dest=homedir2
+
+- name: "install homedir2"
+  shell: "cd homedir2 && ./install.pl remote utf"
+

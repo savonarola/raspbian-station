@@ -1,0 +1,5 @@
+volumes:
+- synology1
+- synology2
+
+smb_host: 192.168.2.115

@@ -1,0 +1,13 @@
+- name: Setup RaspberryPI
+  user: pi
+  sudo: yes
+  hosts: all
+  roles:
+  - common
+  - synology
+  - transmission
+
+- name: Setup user shell
+  user: pi
+  sudo: no
+  hosts: all

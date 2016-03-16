@@ -1,0 +1,7 @@
+- name: "update apt cache"
+  apt: update_cache=yes
+
+- name: "setup goodies"
+  apt: name={{item}}
+  with_items: "{{goodies}}"
+- user: name={{ansible_user_id}} shell=/usr/bin/zsh

@@ -11,3 +11,5 @@
   user: pi
   sudo: no
   hosts: all
+  roles:
+  - homedir

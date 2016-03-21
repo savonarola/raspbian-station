@@ -1,5 +1,6 @@
 - name: "install transmission"
   apt: name=transmission-daemon
+  tags: ['packages']
 
 - name: "stop transmission to avoid config overwriting"
   service: name=transmission-daemon state=stopped

@@ -1,9 +1,11 @@
 - name: "update apt cache"
   apt: update_cache=yes
+  tags: ['packages']
 
 - name: "setup goodies"
   apt: name={{item}}
   with_items: "{{goodies}}"
+  tags: ['packages']
 
 - name: "set zsh as default shell"
   user: name={{ansible_user_id}} shell=/usr/bin/zsh

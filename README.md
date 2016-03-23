@@ -12,7 +12,7 @@ Put custom credentials into `passwords.yml` config:
     cp passwords.yml.sample passwords.yml
     vim passwords.yml
 
-Customize role variables.
+Customize role variables and set correct hosts in the inventory file `hosts`.
 
 Run installation script:
 
@@ -20,7 +20,8 @@ Run installation script:
 
 ## Requirements
 
-* [ansible](http://docs.ansible.com/ansible/intro_installation.html)
+* Installed [ansible](http://docs.ansible.com/ansible/intro_installation.html) on the local machine.
+* User named `pi` within Raspberry PI with passwordless ssh access and passwordless sudo.
 
 ## Supported target platforms
 

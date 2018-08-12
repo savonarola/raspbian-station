@@ -1,0 +1,10 @@
+- apt:
+    name: minidlna
+- lineinfile:
+    path: /etc/minidlna.conf
+    line: "media_dir=V,{{ item }}"
+  with_items: "{{ video_folders }}"
+- lineinfile:
+    path: /etc/minidlna.conf
+    line: "friendly_name=Raspberry"
+- shell: "service minidlna restart"

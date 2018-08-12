@@ -1,15 +1,16 @@
 - name: Setup RaspberryPI
   user: pi
-  sudo: yes
+  become: yes
   hosts: all
   roles:
   - common
   - net_shares
   - transmission
+  - dlna
 
 - name: Setup user shell
   user: pi
-  sudo: no
+  become: no
   hosts: all
   roles:
   - homedir
